@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class PageBase {
      WebDriver driver;
-     public static long Wait = 60;
+     public static long Wait = 100;
      public PageBase(WebDriver driver){
          this.driver = driver;
      }

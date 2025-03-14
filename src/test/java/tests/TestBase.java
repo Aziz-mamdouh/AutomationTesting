@@ -5,12 +5,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 
 public class TestBase {
     public static WebDriver driver;
 
-    @BeforeMethod
+    @BeforeTest
     public void openBrowser() throws InterruptedException {
        WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
@@ -18,10 +20,11 @@ public class TestBase {
         options.addArguments("--disable-dev-shm-usage");
         driver = new ChromeDriver(options);
        driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
-       System.out.println(driver.getCurrentUrl());
+        driver.manage().window().maximize();
+        System.out.println(driver.getCurrentUrl());
     }
 
-    @AfterMethod
+    @AfterTest
     public void closeBrowser() {
         driver.quit();
     }

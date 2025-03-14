@@ -11,7 +11,7 @@ public class DashboardPage extends PageBase{
 
     String url = "https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index";  //expected Result
 
-    public String dashboardText = "Dashboard23626";
+    public String dashboardText = "Dashboard";
 
     By actualResult =By.xpath("//*[@class=\"oxd-text oxd-text--h6 oxd-topbar-header-breadcrumb-module\"]");
 
